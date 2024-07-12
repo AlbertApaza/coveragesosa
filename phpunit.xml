@@ -3,8 +3,7 @@
   <testsuites>
     <testsuite name="My Test Suite">
       <directory>tests/DB</directory>
-      <directory>tests/MODEL</directory>
-
+	  <directory>tests/DB/Model</directory>
 
     </testsuite>
   </testsuites>
