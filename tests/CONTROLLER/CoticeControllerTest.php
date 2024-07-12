@@ -8,7 +8,7 @@ use App\Model\Cotizacion;
 use App\Model\Maquinaria;
 use App\Model\Lugar;
 
-class ClsCoticeTest extends TestCase
+class CoticeControllerTest extends TestCase
 {
     public function testProcesarFormularioClienteNoValido()
     {
