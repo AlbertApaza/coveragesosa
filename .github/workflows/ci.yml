@@ -22,7 +22,8 @@ jobs:
     - name: Give execute permission to PHPUnit
       run: chmod +x vendor/bin/phpunit
     - name: Run PHPUnit tests
-      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage-report tests/Model/*.php tests/Controller/*.php
+      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage-report tests/Model tests/Controller
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
