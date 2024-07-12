@@ -3,7 +3,9 @@
   <testsuites>
     <testsuite name="My Test Suite">
       <directory>tests/DB</directory>
-	  <directory>tests/DB/Model</directory>
+	  <directory>tests/Model</directory>
+	  <directory>tests/Controller</directory>
+
 
     </testsuite>
   </testsuites>
