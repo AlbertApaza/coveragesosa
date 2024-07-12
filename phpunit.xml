@@ -3,6 +3,9 @@
   <testsuites>
     <testsuite name="My Test Suite">
       <directory>tests/DB</directory>
+      <directory>tests/CONTROLLER</directory>
+      <directory>tests/MODEL</directory>
+
     </testsuite>
   </testsuites>
   <source>
