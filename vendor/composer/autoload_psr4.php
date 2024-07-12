@@ -51,7 +51,7 @@ return array(
     'Behat\\Mink\\' => array($vendorDir . '/behat/mink/src'),
     'Behat\\Hook\\' => array($vendorDir . '/behat/behat/src/Behat/Hook'),
     'Behat\\Behat\\' => array($vendorDir . '/behat/behat/src/Behat/Behat'),
-    'App\\Model\\' => array($baseDir . '/src/DB/Model'),
-    'App\\Controller\\' => array($baseDir . '/src/DB/Controller'),
+    'App\\Model\\' => array($baseDir . '/src/Model'),
+    'App\\Controller\\' => array($baseDir . '/src/Controller'),
     'App\\' => array($baseDir . '/src'),
 );

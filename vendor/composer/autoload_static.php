@@ -290,11 +290,11 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         ),
         'App\\Model\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/DB/Model',
+            0 => __DIR__ . '/../..' . '/src/Model',
         ),
         'App\\Controller\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/DB/Controller',
+            0 => __DIR__ . '/../..' . '/src/Controller',
         ),
         'App\\' => 
         array (

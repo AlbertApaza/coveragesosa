@@ -21,10 +21,9 @@ class ReservaTest extends TestCase {
 
     // Test para agregar una reserva nueva
     public function testAgregarReserva() {
-        $resultado = $this->reserva->agregarReserva(205, 639, 1, 1, '2024-06-18 01:37:05', '2024-06-18 01:37:07', '2024-06-18 01:37:08', 1);
+        $resultado = $this->reserva->agregarReserva(1, 2, 3, 4, '2024-06-30', '2024-07-01', '2024-07-02', 1); // Cambiado 'activo' por 1
         $this->assertTrue($resultado);
     }
-    
 
     // Test para editar una reserva existente
     public function testEditarReserva() {
@@ -35,14 +34,14 @@ class ReservaTest extends TestCase {
 
     // Test para eliminar una reserva existente
     public function testEliminarReserva() {
-        $idReservaExistente = 12;
-        $resultado = $this->reserva->eliminarReserva($idReservaExistente);
-        $this->assertTrue($resultado);
+        $idReserva = 5; // Asegúrate de que esta reserva exista en la base de datos
+        $resultado = $this->reserva->eliminarReserva($idReserva);
+        $this->assertTrue($resultado); // Asegúrate de que devuelve true si se eliminó correctamente
     }
 
     // Test para buscar reservas por término
     public function testBuscarReserva() {
-        $termino = 567;
+        $termino = '567';
         $reservasEncontradas = $this->reserva->buscarReserva($termino);
         $this->assertIsArray($reservasEncontradas);
         // Aquí puedes añadir más aserciones según lo que esperas en tus datos de prueba
@@ -50,11 +49,10 @@ class ReservaTest extends TestCase {
 
     // Test para obtener reserva por ID
     public function testObtenerReservaPorId() {
-        // Primero, asegúrate de tener un ID de reserva existente en tu base de datos para probar la obtención por ID
-        $idReservaExistente = 7;
-        $reserva = $this->reserva->obtenerReservaPorId($idReservaExistente);
-        $this->assertNotNull($reserva);
-        // Aquí puedes añadir más aserciones según lo que esperas en tus datos de prueba
+        $idReserva = 1; // Asegúrate de que esta reserva exista en la base de datos
+        $reserva = $this->reserva->obtenerReservaPorId($idReserva);
+        $this->assertIsArray($reserva);
+        $this->assertEquals($idReserva, $reserva['idreserva']);
     }
 }
 ?>
