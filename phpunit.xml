@@ -2,12 +2,14 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.2/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true" cacheDirectory=".phpunit.cache">
   <testsuites>
     <testsuite name="My Test Suite">
-      <directory>./tests</directory> <!-- Ruta relativa a la carpeta de tests -->
+      <directory>tests/DB</directory>
+      <directory>tests/MODEL</directory>
+      <directory>tests/CONTROLLER</directory>
     </testsuite>
   </testsuites>
   <source>
     <include>
-      <directory suffix=".php">./src</directory> <!-- Ruta relativa a la carpeta de código fuente -->
+      <directory suffix=".php">src</directory>
     </include>
   </source>
 </phpunit>
