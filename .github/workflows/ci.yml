@@ -33,7 +33,7 @@ jobs:
       run: chmod +x vendor/bin/phpunit
 
     - name: Run PHPUnit tests
-      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage-report --verbose
+      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage-report
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
