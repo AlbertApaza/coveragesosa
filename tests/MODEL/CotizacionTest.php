@@ -1,7 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use App\Model\Cotizacion;
-use mysqli;
 use PHPUnit\Framework\MockObject\MockObject;
 use DB\Conectar;
 

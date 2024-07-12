@@ -1,7 +1,7 @@
 <?php
 namespace App\Model;
 
-use DB\Conectar;
+use DB\Conectar; // Importa la clase Conectar desde el namespace DB
 
 class Usuario {
     private $db;
@@ -12,6 +12,7 @@ class Usuario {
 
     public function login($username, $password){
         $stmt = $this->db->prepare("SELECT * FROM tbadmin WHERE usuario = ? AND password = ?");
+        
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
         
@@ -22,4 +23,11 @@ class Usuario {
         
         return $result->fetch_assoc();
     }
+    
+    
+    
+    
+    
+    
 }
+?>
