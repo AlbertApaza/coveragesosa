@@ -8,11 +8,7 @@ use App\Model\Cotizacion;
 use App\Model\Maquinaria;
 use App\Model\Lugar;
 
-<<<<<<< HEAD:tests/DB/CoticeControllerTest.php
-class CoticeControllerTest  extends TestCase
-=======
 class CoticeControllerTest extends TestCase
->>>>>>> eb94b67444c350db4654026de78428d9f6057e29:tests/CONTROLLER/CoticeControllerTest.php
 {
     public function testProcesarFormularioClienteNoValido()
     {
