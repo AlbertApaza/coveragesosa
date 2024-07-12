@@ -20,7 +20,7 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.2.21' # Ajusta la versión de PHP según tus necesidades
+        php-version: '8.2' # Ajusta la versión de PHP según tus necesidades
         extensions: mbstring, intl, pdo_mysql
 
     - name: Install Composer dependencies
@@ -29,11 +29,13 @@ jobs:
     - name: Check Composer installed versions
       run: composer show
 
-    - name: Run PHPUnit tests
+    - name: Prepare for PHPUnit
       run: |
         if (Test-Path -Path "phpunit") { Remove-Item -Path "phpunit" -Recurse -Force }
         mkdir phpunit
-        php -dxdebug.mode=coverage vendor\bin\phpunit --coverage-php phpunit\codeCoverage.php
+
+    - name: Run PHPUnit tests
+      run: php -d xdebug.mode=coverage vendor\bin\phpunit --coverage-php phpunit\codeCoverage.php
 
     - name: Generate Cobertura report
       run: vendor\bin\phpunit-to-cobertura phpunit\codeCoverage.php phpunit\coberturaCoverage.xml
