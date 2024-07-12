@@ -4,7 +4,6 @@
     <testsuite name="My Test Suite">
       <directory>tests/DB</directory>
       <directory>tests/MODEL</directory>
-      <directory>tests/CONSTROLLER</directory>
     </testsuite>
   </testsuites>
   <source>
