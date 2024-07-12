@@ -33,7 +33,10 @@ jobs:
       run: chmod +x vendor/bin/phpunit
 
     - name: Run PHPUnit tests
-      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage-report
+      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-php ./phpunit/codeCoverage.php
+
+    - name: Generate Cobertura report
+      run: ./vendor/bin/phpunit-to-cobertura ./phpunit/codeCoverage.php ./phpunit/coberturaCoverage.xml
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
@@ -44,7 +47,7 @@ jobs:
         args: >
           -Dsonar.projectKey=${{ env.SONAR_PROJECT }}
           -Dsonar.organization=${{ env.SONAR_ORG }}
-          -Dsonar.php.coverage.reportPaths=coverage.xml
+          -Dsonar.php.coverage.reportPaths=./phpunit/coberturaCoverage.xml
 
     - name: Upload PHPUnit test report
       if: always()
@@ -57,8 +60,8 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: coverage-report
-        path: coverage.xml
+        name: cobertura-report
+        path: ./phpunit/coberturaCoverage.xml
 
     - name: Create coverage directory
       run: mkdir -p coverage
